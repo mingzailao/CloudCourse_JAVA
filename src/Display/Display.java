@@ -6,7 +6,7 @@ package Display;
 public class Display {
     private int value=0;
     private int limit;
-    private static int step=1;
+    private static int step=1;//类变量
     Display(){
 
     }
@@ -25,6 +25,11 @@ public class Display {
     }
     public int getValue(){
         return value;
+    }
+    public static void f()//static 函数相当于类函数,
+    {
+//        value++;//不能对类成员操作
+        step++;//但是可以对类变量进行操作
     }
     public static void main(String[] args){
 //        Display d=new Display(24);
