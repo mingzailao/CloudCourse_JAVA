@@ -6,6 +6,7 @@ package Display;
 public class Display {
     private int value=0;
     private int limit;
+    private static int step=1;
     Display(){
 
     }
@@ -26,10 +27,20 @@ public class Display {
         return value;
     }
     public static void main(String[] args){
-        Display d=new Display(24);
-        for(;;){
-            d.increase();
-            System.out.println(d.getValue());
-        }
+//        Display d=new Display(24);
+//        for(;;){
+//            d.increase();
+//            System.out.println(d.getValue());
+//        }
+        Display d1=new Display(10);
+        Display d2=new Display(20);
+        d1.increase();
+        System.out.println(d1.getValue());
+        System.out.println(d2.getValue());
+        System.out.println(d1.step);
+        System.out.println(d2.step);
+        d1.step=2;
+        System.out.println(d1.step);
+        System.out.println(d2.step);
     }
 }
