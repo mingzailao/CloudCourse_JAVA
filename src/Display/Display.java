@@ -1,4 +1,4 @@
-package Clock;
+package Display;
 
 /**
  * Created by apple on 15/12/13.
@@ -9,7 +9,7 @@ public class Display {
     Display(){
 
     }
-    Display(int limit){
+    public Display(int limit){
         this.limit=limit;
     }
     public boolean increase(){
