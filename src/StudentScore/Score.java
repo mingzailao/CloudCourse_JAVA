@@ -99,5 +99,4 @@ public class Score {
         System.out.println(s.getStudentScore("bob"));
         System.out.println(s.getStudentScore("sue"));
     }
-
 }
