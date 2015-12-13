@@ -6,8 +6,8 @@ import java.util.Scanner;
  * Created by apple on 15/12/13.
  */
 public class Fraction{
-    int fenzi;
-    int fenmu;
+    private int fenzi;
+    private int  fenmu;
     Fraction()
     {
 
@@ -17,7 +17,7 @@ public class Fraction{
         this.fenzi=fenzi;
         this.fenmu=fenmu;
     }
-    void print()
+    public void print()
     {
         this.getsimple();
         if(fenzi!=fenmu)
@@ -30,7 +30,7 @@ public class Fraction{
         double result=fenzi*1.0/fenmu;
         return result;
     }
-    Fraction plus(Fraction r)
+    public Fraction plus(Fraction r)
     {
         Fraction result=new Fraction();
         result.fenmu=fenmu*r.fenmu;
@@ -41,7 +41,7 @@ public class Fraction{
         return result;
 
     }
-    void getsimple()
+    public void getsimple()
     {
         int tmp;
         int m=fenmu,n=fenzi;
@@ -55,7 +55,7 @@ public class Fraction{
         fenzi=fenzi/n;
         fenmu=fenmu/n;
     }
-    Fraction multiply(Fraction f)
+    public Fraction multiply(Fraction f)
     {
         Fraction result=new Fraction();
         result.fenzi=fenzi*f.fenzi;
