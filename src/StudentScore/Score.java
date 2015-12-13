@@ -20,7 +20,6 @@ class Student {
 }
 class Course {
     private String name;
-    ArrayList<Student> includeStudent=new ArrayList<Student>();
     Course(){
 
     }
@@ -47,11 +46,20 @@ class Student_Course{
     public String getCourse(){
         return course.getcourseName();
     }
+}
+class Course_Score{
+    private String coursename;
+    private double value;
+    Course_Score(){
 
-//    public void addItem(String Studen_name,String Course_name){
-//        Student s=new Student(Studen_name);
-//        Course c=new Course(Course_name);
-//    }
+    }
+    Course_Score(String course_name,double value){
+        this.coursename=course_name;
+        this.value=value;
+    }
+    public String toString(){
+        return coursename.concat(" : ").concat(String.valueOf(value));
+    }
 }
 public class Score {
     private HashMap<Student_Course,Double> m=new HashMap<Student_Course,Double>();
@@ -60,12 +68,13 @@ public class Score {
         Student_Course a=new Student_Course(student_name,course_name);
         m.put(a,value);
     }
-    public ArrayList<Double> getStudentScore(String studen_name){
-        ArrayList<Double> ans=new ArrayList<Double>();
+    public ArrayList<Course_Score> getStudentScore(String studen_name){
+        ArrayList<Course_Score> ans=new ArrayList<Course_Score>();
         for (Student_Course key:
              m.keySet()) {
             if(key.getStudent().equals(studen_name)){
-                ans.add(m.get(key));
+                Course_Score tmp=new Course_Score(key.getCourse(),m.get(key));
+                ans.add(tmp);
             }
         }
         return ans;
@@ -74,10 +83,9 @@ public class Score {
         ArrayList<Double> ans=new ArrayList<Double>();
         for (Student_Course key:
                 this.m.keySet()) {
-            Student_Course tmp=new Student_Course();
-            tmp=key;
-            if(tmp.getCourse().equals(course_name)){
-                ans.add(this.m.get(tmp));
+
+            if(key.getCourse().equals(course_name)){
+                ans.add(this.m.get(key));
             }
         }
         return ans;
