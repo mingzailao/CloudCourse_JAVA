@@ -12,12 +12,10 @@ public class CD extends Item {
         super(title, comments, gotIt, artist, playingTime);
         this.numOfTracks = numOfTracks;
     }
-
-    public static void main(String[] args){
-
-    }
-
     public void print() {
         System.out.println("CD:"+super.getTitle()+" : "+super.getComments());
     }
 }
+
+
+

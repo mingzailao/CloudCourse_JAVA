@@ -22,7 +22,8 @@ public class DataBase {
         db.add(new CD("abc","...",false,"abc",50,10));
         db.add(new CD("def","...",false,"def",100,20));
         db.add(new DVD("asd","...",false,"asd",1000,"Smith"));
-        db.add(new mp3("mp3","mp3",false,"mp3",100,30,"www.baidu.com"));
+        db.add(new Mp3("mp3","mp3",false,"mp3",100,30,"www.baidu.com"));
+        db.add(new VideoGame("tttt","...",false,"sasd",199,12));
         db.list();
     }
 }
