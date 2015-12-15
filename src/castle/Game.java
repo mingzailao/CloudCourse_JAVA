@@ -10,9 +10,28 @@ public class Game {
         
     public Game() 
     {
-        handlers.put("go",new HandlerGo(this));
-        handlers.put("bye",new HandlerBye(this));
-        handlers.put("help",new HandlerHelp(this));
+//        handlers.put("go",new HandlerGo(this));
+//        handlers.put("bye",new HandlerBye(this));
+//        handlers.put("help",new HandlerHelp(this));
+        handlers.put("bye",new Handler(this){
+            @Override
+            public boolean isBye() {
+                return true;
+            }
+        });
+        handlers.put("help",new Handler(this){
+            @Override
+            public void doCmd(String word) {
+                System.out.println("迷路了吗？你可以做的命令有：go bye help");
+                System.out.println("如：\tgo east");
+            }
+        });
+        handlers.put("go",new Handler(this){
+            @Override
+            public void doCmd(String word) {
+                game.goRoom(word);
+            }
+        });
         createRooms();
 
     }

@@ -20,4 +20,9 @@ public class Rectangle extends Shape {
 		g.drawRect(x, y, width, height);
 	}
 
+	@Override
+	public void move(Graphics g) {
+
+	}
+
 }

@@ -17,4 +17,9 @@ public class Triangle extends Shape {
 		g.drawPolygon(x, y, x.length);
 	}
 
+	@Override
+	public void move(Graphics g) {
+
+	}
+
 }

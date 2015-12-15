@@ -17,4 +17,11 @@ public class Circle extends Shape {
 	public void draw(Graphics g) {
 		g.drawOval(x-radius, y-radius, radius*2, radius*2);
 	}
+
+	@Override
+	public void move(Graphics g) {
+
+	}
+
+
 }
